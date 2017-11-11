@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block page %}СТО{% endblock %}
+
+{% block sidebar %}
+  Привет, {{ request.user }}
+  <hr/>
+
+  <a href="{% url 'sto-account' %}">Профиль</a>
+  -
+  <a href="{% url 'sto-services' %}">Услуги</a>
+  
+{% endblock %}
