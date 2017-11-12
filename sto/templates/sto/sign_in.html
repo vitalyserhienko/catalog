@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
 {% block title %}Войти{% endblock %}
 
@@ -8,8 +9,8 @@
 
   <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% bootstrap_form form %}
     <button type="submit" class="btn btn-success pull-right">Войти</button>
   </form>
-
+<a href="{% url 'sto-sign-up' %}" class="text-center">Зарегистрировать СТО</a>
 {% endblock %}
