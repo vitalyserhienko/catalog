@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_signup.html' %}
 {% load bootstrap4 %}
 
 {% block title %}Войти{% endblock %}
@@ -13,4 +13,5 @@
     <button type="submit" class="btn btn-success pull-right">Войти</button>
   </form>
 <a href="{% url 'sto-sign-up' %}" class="text-center">Зарегистрировать СТО</a>
+
 {% endblock %}

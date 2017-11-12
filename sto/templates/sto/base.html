@@ -3,11 +3,20 @@
 {% block page %}СТО{% endblock %}
 
 {% block sidebar %}
-  Привет, {{ request.user }}
-  <hr/>
-
-  <a href="{% url 'sto-account' %}">Профиль</a>
-  -
-  <a href="{% url 'sto-services' %}">Услуги</a>
-  
+<div class="text-center">
+  <img class="img-circle" src="{{ MEDIA_URL }}{{ request.user.sto.logo }}" width="70" height="70">
+  <br/>
+  <br/>
+  <h4>Вы залогинены как:<br/>{{ request.user.get_full_name }}</h4>
+  <br/>
+  <h5>Обьект:<br/>{{ request.user.sto.name }}</h5>
+  <br/>
+  <div class="list-group">
+    <a href="{% url 'sto-account' %}" class="group-item">Профиль</a>
+    <br/>
+    <a href="{% url 'sto-services' %}" class="group-item">Услуги</a>
+    <br/>
+    <a href="{% url 'sto-sign-out' %}" class="group-item">Выйти</a>
+  </div>
+</div>
 {% endblock %}

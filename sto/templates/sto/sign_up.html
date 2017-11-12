@@ -1,5 +1,7 @@
 {% extends 'base_signup.html' %}
 
+{% load bootstrap4 %}
+
 {% block title %}Войти{% endblock %}
 
 {% block heading %}СТО{% endblock %}
@@ -8,9 +10,11 @@
 
 <form method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-  {{ user_form.as_p }}
-  {{ sto_form.as_p }}
+  <h2>Владелец</h2>
+  {% bootstrap_form user_form %}
+  <h2>СТО</h2>
+  {% bootstrap_form sto_form %}
   <button type="submit" name="button" class="btn btn-success pull-right">Зарегистрировать</button>
 </form>
-
+<a href="{% url 'sto-sign-in' %}" class="text-center">Я уже зарегистрирован</a>
 {% endblock %}

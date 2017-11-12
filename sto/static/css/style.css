@@ -8,17 +8,6 @@ body {
   background-color: #eee;
 }
 
-.btn-red {
-  color: white;
-  background-color: #E21E35;
-}
-
-.btn-red:hover,
-.btn-red:focus {
-  color: white;
-  background-color: #EC4D57;
-}
-
 /* SIDE BAR */
 .sidebar {
   height: 100vh;
@@ -26,7 +15,7 @@ body {
   top: 0;
   left: 0;
   padding: 0;
-  background-color: #7B2324;
+  background-color: #252830;
   overflow: auto;
 }
 
@@ -35,7 +24,7 @@ body {
   padding: 30px 10px;
   font-weight: bold;
   font-size: 15px;
-  background-color: #3F1E1E;
+  background-color: #252830;
 }
 
 .sidebar > div:first-child > h4 {

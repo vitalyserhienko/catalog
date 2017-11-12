@@ -6,15 +6,15 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 # Create your views here.
-def index(request):
-    return render(request, 'sto/index.html', {})
+# def index(request):
+#     return render(request, 'sto/index.html', {})
 
 def home(request):
     return redirect(sto_home)
 
 @login_required(login_url='/sto/sign-in/')
 def sto_home(request):
-    return render(request, 'sto/home.html', {})
+    return redirect(sto_services)
 
 @login_required(login_url='/sto/sign-in/')
 def sto_account(request):
