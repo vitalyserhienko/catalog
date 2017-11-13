@@ -43,4 +43,8 @@ urlpatterns = [
 
     url(r'^sto/services/$', views.sto_services, name='sto-services'),
 
+    url(r'^sto/services/add/$', views.service_add, name='service-add'),
+
+    url(r'^sto/services/edit/(?P<service_id>\d+)/$', views.service_edit, name='service-edit'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

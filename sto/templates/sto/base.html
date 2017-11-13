@@ -10,13 +10,13 @@
   <h4>Вы залогинены как:<br/>{{ request.user.get_full_name }}</h4>
   <br/>
   <h5>Обьект:<br/>{{ request.user.sto.name }}</h5>
-  <br/>
-  <div class="list-group">
-    <a href="{% url 'sto-account' %}" class="group-item">Профиль</a>
-    <br/>
-    <a href="{% url 'sto-services' %}" class="group-item">Услуги</a>
-    <br/>
-    <a href="{% url 'sto-sign-out' %}" class="group-item">Выйти</a>
-  </div>
 </div>
+<br/>
+  <div class="list-group">
+    <a href="{% url 'sto-account' %}" class="group-item btn btn-secondary">Профиль</a>
+    <br/>
+    <a href="{% url 'sto-services' %}" class="group-item btn btn-secondary">Услуги</a>
+    <br/>
+    <a href="{% url 'sto-sign-out' %}" class="group-item btn btn-danger">Выйти</a>
+  </div>
 {% endblock %}
