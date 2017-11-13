@@ -61,7 +61,7 @@ def service_add(request):
 def service_edit(request, service_id):
     form = ServiceForm(instance = StoService.objects.get(id = service_id))
     if request.method == "POST":
-        form = ServiceForm(request.POST, request.FILES, instance = StoService.objects.get(id = sto_id))
+        form = ServiceForm(request.POST, request.FILES, instance = StoService.objects.get(id = service_id))
         if form.is_valid():
             service = form.save()
             return redirect(sto_services)
