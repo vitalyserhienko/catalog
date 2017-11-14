@@ -25,7 +25,7 @@
         {% for service in services %}
           <tr>
             <td scope="row">{{ service.id }}</td>
-            <td><a href="{% url 'service-edit' service.id %}">{{ service.name }}</td>
+            <td><a href="{% url 'service-edit' service.id %}">{{ service.name }}</a></td>
             <td>{{ service.description }}</td>
             <td>{{ service.price }}</td>
             <td class="text-center"><img class="img-rounded"

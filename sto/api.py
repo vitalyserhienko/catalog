@@ -1,5 +1,4 @@
 from django.http import JsonResponse
-
 from sto.models import Sto, StoService
 from sto.serializers import StoSerializer, ServicesSerializer
 
@@ -9,7 +8,6 @@ def get_stos(request):
     many=True,
     context={'request': request}
     ).data
-
     return JsonResponse({'stos':stos})
 
 def get_services(request, sto_id):

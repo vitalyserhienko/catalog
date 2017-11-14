@@ -1,18 +1,21 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-
 from sto.forms import UserForm, StoForm, UserFormEdit, ServiceForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
-
-from sto.models import Services, StoService
+from sto.models import Services, StoService, Sto
 
 # Create your views here.
-# def index(request):
-#     return render(request, 'sto/index.html', {})
+def index(request):
+    services = StoService.objects.all()
+    stos = Sto.objects.all()
+    return render(request, 'index.html', {
+    'services': services,
+    'stos': stos
+})
 
-def home(request):
-    return redirect(sto_home)
+# def home(request):
+#     return redirect(sto_home)
 
 @login_required(login_url='/sto/sign-in/')
 def sto_home(request):

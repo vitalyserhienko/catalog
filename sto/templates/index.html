@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Главная страница</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+  <a href="{% url 'sto-sign-in' %}" class="group-item btn btn-secondary">Войти</a>
+  <a href="{% url 'sto-sign-up' %}" class="group-item btn btn-secondary">Регистрация обьекта</a>
+  <br/>
+
+<div class="container">
+  <table class="table table-bordered table-hovered table-striped">
+    <thead>
+      <tr>
+        <th>СТО</th>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Цена</th>
+        <th class="text-center">Изображение</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in services %}
+        <tr>
+          {% for sto in stos %}
+            {% if service.sto == sto %}
+              <td>{{ sto.name }}</td>
+            {% endif %}
+          {% endfor %}
+          <td>{{ service.name }}</td>
+          <td>{{ service.description }}</td>
+          <td>{{ service.price }}</td>
+          <td class="text-center"><img class="img-rounded"
+          src="{{MEDIA_URL}}{{ service.image }}" width="100" height="50"></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+</body>
+</html>
