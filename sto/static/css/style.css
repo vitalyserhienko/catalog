@@ -1,12 +1,16 @@
 body {
-  padding-top: 50px;
+  /*padding-top: 50px;*/
   background-color: #eee;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
-.bg-register {
-  background-color: #eee;
+.objekt {
+  padding-left: 15px;
 }
+
+/*.bg-register {
+  background-color: #eee;
+}*/
 
 /* SIDE BAR - HEADER */
 .sidebar > div:first-child {

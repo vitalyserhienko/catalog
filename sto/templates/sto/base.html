@@ -2,25 +2,36 @@
 
 {% block page %}СТО{% endblock %}
 
-{% block sidebar %}
+{% block menu %}
 
 {% url 'sto-account' as sto_account_url %}
 {% url 'sto-services' as sto_service_url %}
 
-<div class="text-center">
-  <img class="img-circle" src="{{ MEDIA_URL }}{{ request.user.sto.logo }}" width="70" height="70">
-  <br/>
-  <br/>
-  <h4>Вы залогинены как:<br/>{{ request.user.get_full_name }}</h4>
-  <br/>
-  <h5>Обьект:<br/>{{ request.user.sto.name }}</h5>
-</div>
-<br/>
-<div class="list-group">
-  <a href="{% url 'sto-account' %}" class="group-item btn btn-secondary {% if request.path == sto_account_url %} active {% endif %}">Профиль</a>
-  <br/>
-  <a href="{% url 'sto-services' %}" class="group-item btn btn-secondary {% if request.path == sto_service_url %} active {% endif %}">Услуги</a>
-  <br/>
-  <a href="{% url 'sto-sign-out' %}" class="group-item btn btn-danger">Выйти</a>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="{{ MEDIA_URL }}{{ request.user.sto.logo }}" height="30" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="text-white">Добрый день, {{ request.user.get_full_name }}</div>
+    <div class="text-white objekt">Обьект: {{ request.user.sto.name }}</div>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == sto_account_url %} active {% endif %}" href="{% url 'sto-account' %}">Профиль</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == sto_service_url %} active {% endif %}" href="{% url 'sto-services' %}">Услуги</a>
+          <span class="sr-only">(current)</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'sto-sign-out' %}">Выйти</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 {% endblock %}
