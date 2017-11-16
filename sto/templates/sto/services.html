@@ -1,13 +1,9 @@
 {% extends 'sto/base.html' %}
 
 {% block page %}
-<div class="card">
-  <div class="card-head">
-    <h1 class="mt-5 text-center">Услуги</h1>
-  </div>
-  <div class="card-body"
-  </br>
-  </br>
+  <div>Добрый день, {{ request.user.get_full_name }}</div>
+  <div>Обьект: {{ request.user.sto.name }}</div>
+    <h1 class="mt-1 text-center">Услуги</h1>
       <table class="table table-bordered table-hovered table-striped">
         <thead>
           <tr>
@@ -25,14 +21,11 @@
               <td><a href="{% url 'service-edit' service.id %}">{{ service.name }}</a></td>
               <td>{{ service.description }}</td>
               <td>{{ service.price }}</td>
-              <td class="text-center"><img class="img-rounded"
-                src="{{MEDIA_URL}}{{ service.image }}" height="50"></td>
+              <td class="text-center"><img class="img-rounded" src="{{MEDIA_URL}}{{ service.image }}" height="50"></td>
             </tr>
           {% endfor %}
         </tbody>
       </table>
-    <a href="{% url 'service-add' %}" class="btn btn-success">Добавить услугу</a>
-  </div>
-</div>
+      <a href="{% url 'service-add' %}" class="btn btn-success">Добавить услугу</a>
 
 {% endblock %}

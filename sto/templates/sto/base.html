@@ -15,8 +15,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="text-white">Добрый день, {{ request.user.get_full_name }}</div>
-    <div class="text-white objekt">Обьект: {{ request.user.sto.name }}</div>
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
@@ -25,7 +23,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link {% if request.path == sto_service_url %} active {% endif %}" href="{% url 'sto-services' %}">Услуги</a>
-          <span class="sr-only">(current)</span>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'sto-sign-out' %}">Выйти</a>
