@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = ')ja2zh_d4^zp^=!qm@f@4tgs72yp0@xzskaj+vcl#r5l#(m=93'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['city-catalog.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -84,7 +85,10 @@ DATABASES = {
 }
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
+<<<<<<< HEAD
+=======
 
+>>>>>>> dda7eeedcdc8f923f158234a618cf9782745be4b
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
