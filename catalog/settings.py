@@ -85,10 +85,6 @@ DATABASES = {
 }
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
-<<<<<<< HEAD
-=======
-
->>>>>>> dda7eeedcdc8f923f158234a618cf9782745be4b
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
